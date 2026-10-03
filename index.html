@@ -9,10 +9,11 @@
 <meta property="og:description" content="El orgullo de ser peruano también se baila. Marinera norteña, danzas del Perú y música. Alquiler de vestuarios típicos en Zárate, Lima.">
 <meta property="og:image" content="img/logo-academia.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 2l6 8h10v10l8 6-8 6v10H38l-6 8-6-8H16V32l-8-6 8-6V10h10z' fill='%23e02a3a'/%3E%3Ctext x='32' y='40' font-family='Arial' font-size='26' font-weight='900' fill='%23fff' text-anchor='middle'%3ETP%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/jpeg" href="img/logo-academia.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,17 +66,12 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:var(--font-body);color:var(--txt);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  img,svg{display:block;max-width:100%}
+  img{display:block;max-width:100%}
   a{color:inherit}
   .wrap{width:min(1170px,92%);margin-inline:auto}
 
   /* ====== divisor festivo animado ====== */
-  .textil{
-    height:12px;opacity:.95;
-    background-image:var(--grad-hot);
-    background-size:200% 100%;
-    animation:grad-move 8s linear infinite;
-  }
+  .textil{height:12px;opacity:.95;background-image:var(--grad-hot);background-size:200% 100%;animation:grad-move 8s linear infinite}
   @keyframes grad-move{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 
   /* ====== barra superior ====== */
@@ -85,18 +81,17 @@
   .promo-track .sep{color:var(--oro)}
   @keyframes marquee{to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion:reduce){
-    .promo-track,.textil,.confetti i,.floaty,.glow-pulse,.shine::after,.bounce-icon svg,.pennant::after{animation:none!important}
+    .promo-track,.textil,.confetti i,.floaty,.glow-pulse::after,.shine::after,.pennant::after,.paso::before{animation:none!important}
     .reveal{opacity:1!important;transform:none!important}
   }
 
   /* ====== header ====== */
   .site-header{position:sticky;top:0;z-index:60;background:rgba(19,6,9,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
   .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-  .brand-mark{width:46px;height:46px;flex:none;filter:drop-shadow(0 4px 10px rgba(232,50,63,.5));transition:transform .4s ease}
-  .brand:hover .brand-mark{transform:rotate(-8deg) scale(1.08)}
-  .brand-name{font-family:var(--font-display);font-weight:800;font-size:1.32rem;line-height:1.05;letter-spacing:.01em;
-    background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand-mark{width:48px;height:48px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,.25);box-shadow:0 4px 12px rgba(232,50,63,.45);transition:transform .4s ease}
+  .brand:hover .brand-mark{transform:rotate(-6deg) scale(1.07)}
+  .brand-name{font-family:var(--font-display);font-weight:800;font-size:1.32rem;line-height:1.05;letter-spacing:.01em;background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
   .brand-name small{display:block;font-family:var(--font-body);font-weight:600;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rosa)}
   .nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
   .nav-links a{text-decoration:none;font-weight:600;font-size:.93rem;color:var(--txt);position:relative;padding:.2rem 0}
@@ -113,8 +108,7 @@
   .btn-light:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
   .shine::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s ease infinite}
   @keyframes shine{0%{left:-80%}45%{left:130%}100%{left:130%}}
-  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem}
-  .nav-toggle svg{width:26px;height:26px;stroke:var(--txt)}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;color:var(--txt);font-size:1.5rem;line-height:1}
 
   /* ====== hero ====== */
   .hero{position:relative;overflow:hidden;background:
@@ -124,10 +118,9 @@
       linear-gradient(170deg,#1c0a12 0%,#130609 60%)}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
     background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);background-size:26px 26px}
-  /* confeti */
   .confetti{position:absolute;inset:0;pointer-events:none;z-index:1}
   .confetti i{position:absolute;top:-24px;width:9px;height:15px;border-radius:2px;opacity:.85;animation:fall linear infinite}
-  .confetti i:nth-child(1){left:4%;background:var(--oro);animation-duration:9s;animation-delay:0s}
+  .confetti i:nth-child(1){left:4%;background:var(--oro);animation-duration:9s}
   .confetti i:nth-child(2){left:12%;background:var(--rosa);animation-duration:11s;animation-delay:1.2s}
   .confetti i:nth-child(3){left:21%;background:var(--naranja);animation-duration:8s;animation-delay:2.4s}
   .confetti i:nth-child(4){left:30%;background:var(--teal);animation-duration:12s;animation-delay:.6s}
@@ -144,22 +137,19 @@
   .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:3.4rem;align-items:center;padding:4.4rem 0 5rem}
   .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.75rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rosa);margin-bottom:1.1rem}
   .eyebrow::before{content:"";width:34px;height:3px;border-radius:3px;background:var(--grad-hot)}
-  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.06;margin-bottom:1.2rem;
-    background:linear-gradient(120deg,#fff 30%,var(--rosa) 60%,var(--naranja));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.06;margin-bottom:1.2rem;background:linear-gradient(120deg,#fff 30%,var(--rosa) 60%,var(--naranja));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero h1 em{font-style:normal;background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero .lead{font-size:1.08rem;color:var(--muted);max-width:35rem;margin-bottom:1.9rem}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.1rem}
   .hero-badges{display:flex;flex-wrap:wrap;gap:.6rem}
   .chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:.42rem .95rem;font-size:.82rem;font-weight:600;color:var(--txt);transition:transform .2s ease,background .2s ease}
   .chip:hover{transform:translateY(-3px);background:rgba(255,255,255,.13)}
-  .chip svg{width:15px;height:15px;stroke:var(--oro)}
+  .chip i{color:var(--oro);font-size:.85rem}
 
-  /* entrada escalonada del hero */
   .pop{opacity:0;transform:translateY(26px);animation:pop .8s cubic-bezier(.2,.7,.3,1) forwards}
   .pop.p1{animation-delay:.05s}.pop.p2{animation-delay:.18s}.pop.p3{animation-delay:.32s}.pop.p4{animation-delay:.46s}
   @keyframes pop{to{opacity:1;transform:none}}
 
-  /* tarjeta showcase con logo real */
   .showcase{position:relative}
   .floaty{animation:floaty 6s ease-in-out infinite}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -184,7 +174,7 @@
   .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:1.5rem 0}
   .feature{display:flex;align-items:center;gap:.9rem;padding:.6rem 1.6rem;border-left:1px dashed rgba(255,255,255,.35)}
   .feature:first-child{border-left:0}
-  .feature svg{width:27px;height:27px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .feature i{font-size:1.7rem;color:#fff;flex:none}
   .feature b{display:block;font-size:.95rem;color:#fff}
   .feature span{font-size:.8rem;color:rgba(255,255,255,.85)}
 
@@ -195,7 +185,6 @@
   .sec-head.center .eyebrow{justify-content:center}
   .sec-head h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,3.3vw,2.6rem);line-height:1.12;margin-bottom:.7rem;background:linear-gradient(120deg,#fff 45%,var(--rosa));-webkit-background-clip:text;background-clip:text;color:transparent}
   .sec-head p{color:var(--muted);font-size:1.02rem}
-  .sec-head h2 + p{margin-top:.2rem}
 
   /* academia */
   .about{background:var(--bg-2);border-block:1px solid var(--line)}
@@ -204,7 +193,7 @@
   .about-body p strong{color:var(--txt)}
   .check-list{list-style:none;margin-top:1.3rem;display:grid;gap:.65rem}
   .check-list li{display:flex;gap:.7rem;align-items:flex-start;font-size:.97rem}
-  .check-list svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:.15rem}
+  .check-list i{color:var(--teal);margin-top:.25rem}
   .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
   .stat{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.5rem;text-align:center;transition:transform .25s ease,box-shadow .25s ease}
   .stat:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow)}
@@ -219,7 +208,7 @@
   .badge-feat{position:absolute;top:-14px;left:1.4rem;background:var(--grad-hot);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.4rem .9rem;border-radius:999px}
   .taller-ico{width:86px;height:86px;border-radius:22px;background:rgba(255,255,255,.06);border:2px dashed rgba(255,209,102,.45);display:grid;place-items:center;margin-bottom:1.25rem;transition:transform .3s ease}
   .taller-card:hover .taller-ico{transform:rotate(-6deg) scale(1.06)}
-  .taller-ico svg{width:52px;height:52px;stroke:var(--oro);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .taller-ico i{font-size:2.3rem;color:var(--oro)}
   .taller-card h3{font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin-bottom:.5rem}
   .taller-card p{font-size:.92rem;color:var(--muted);margin-bottom:1rem;flex:1}
   .taller-tags{display:flex;flex-wrap:wrap;gap:.4rem}
@@ -227,31 +216,23 @@
   .nota-clases{margin-top:1.8rem;text-align:center;font-size:.9rem;color:var(--muted)}
   .nota-clases strong{color:var(--rosa)}
 
-  /* ====== premios gran barra (estilo afiche) ====== */
+  /* ====== premios gran barra ====== */
   .premios{position:relative;overflow:hidden;background:
       radial-gradient(700px 400px at 15% 0%, rgba(233,30,140,.25), transparent 55%),
       radial-gradient(700px 420px at 90% 100%, rgba(255,154,61,.22), transparent 55%),
       linear-gradient(170deg,#2a0e1e 0%,#180711 100%)}
   .premios-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.8rem;align-items:end;max-width:900px;margin-inline:auto}
   .premio{text-align:center}
-  .pennant{
-    position:relative;margin:0 auto 1.2rem;width:min(200px,100%);
-    padding:1.6rem 1rem 3.2rem;border-radius:14px 14px 0 0;
-    clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 34px),0 100%);
-    display:flex;flex-direction:column;align-items:center;gap:.5rem;
-    transition:transform .3s ease;
-  }
+  .pennant{position:relative;margin:0 auto 1.2rem;width:min(200px,100%);padding:1.6rem 1rem 3.2rem;border-radius:14px 14px 0 0;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 34px),0 100%);display:flex;flex-direction:column;align-items:center;gap:.5rem;transition:transform .3s ease}
   .premio:hover .pennant{transform:translateY(-8px) rotate(-1deg)}
   .pen-1{background:linear-gradient(160deg,#ff5a2e,#e8323f 60%,#b01020)}
   .pen-2{background:linear-gradient(160deg,#ff6ec4,#e91e8c 60%,#a31369)}
   .pen-3{background:linear-gradient(160deg,#3fd0cc,#2ab3b0 60%,#17766e)}
-  .pennant::after{content:"";position:absolute;bottom:calc(34px + 2px);left:0;right:0;height:9px;
-    background-image:radial-gradient(circle, var(--oro) 3.5px, transparent 4px);background-size:15px 9px;background-position:center;opacity:.95;animation:tassel 2.4s ease-in-out infinite}
+  .pennant::after{content:"";position:absolute;bottom:calc(34px + 2px);left:0;right:0;height:9px;background-image:radial-gradient(circle, var(--oro) 3.5px, transparent 4px);background-size:15px 9px;background-position:center;opacity:.95;animation:tassel 2.4s ease-in-out infinite}
   @keyframes tassel{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
-  .pennant .escudo{width:64px;height:70px;margin-bottom:.2rem}
+  .escudo{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 6px 14px rgba(0,0,0,.35);margin-bottom:.2rem}
   .pennant b{font-family:var(--font-display);font-weight:800;font-size:1.15rem;color:#fff;line-height:1.1;text-shadow:0 2px 6px rgba(0,0,0,.35)}
-  .puesto{font-family:var(--font-display);font-weight:800;font-size:2.6rem;line-height:1;
-    background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .puesto{font-family:var(--font-display);font-weight:800;font-size:2.6rem;line-height:1;background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
   .premio .dato{display:inline-block;margin-top:.55rem;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:999px;padding:.4rem 1rem;font-weight:700;font-size:.92rem}
   .premio .dato small{font-weight:600;color:var(--muted)}
   .premios-nota{margin-top:2.4rem;text-align:center;font-size:.85rem;color:var(--muted);max-width:38rem;margin-inline:auto}
@@ -263,19 +244,9 @@
   .vest-list{list-style:none;display:grid;gap:1rem;margin:1.6rem 0 2rem}
   .vest-list li{display:flex;gap:1rem;align-items:flex-start}
   .vest-list .v-ico{width:46px;height:46px;border-radius:14px;flex:none;background:rgba(255,209,102,.12);border:2px dashed rgba(255,209,102,.4);display:grid;place-items:center}
-  .vest-list .v-ico svg{width:23px;height:23px;stroke:var(--oro);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .vest-list .v-ico i{color:var(--oro);font-size:1.15rem}
   .vest-list b{display:block;font-size:1rem}
   .vest-list span{font-size:.85rem;color:var(--muted)}
-
-  /* eventos */
-  .evento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-  .evento-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.55rem;transition:transform .25s ease,box-shadow .25s ease}
-  .evento-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-  .evento-card .e-ico{width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.06);border:2px dashed rgba(255,209,102,.45);display:grid;place-items:center;margin-bottom:.6rem}
-  .evento-card .e-ico svg{width:30px;height:30px;stroke:var(--oro);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .evento-card h3{font-family:var(--font-display);font-weight:700;font-size:1.2rem}
-  .evento-card p{font-size:.9rem;color:var(--muted);flex:1}
-  .evento-card .fecha{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rosa)}
 
   /* galería */
   .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -285,6 +256,16 @@
   .gal-card:hover img{transform:scale(1.07)}
   .gal-card .cap{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .7rem;font-size:.8rem;font-weight:600;background:linear-gradient(transparent,rgba(19,6,9,.92))}
   .gal-empty{display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:.85rem;padding:1rem}
+
+  /* eventos */
+  .evento-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .evento-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.55rem;transition:transform .25s ease,box-shadow .25s ease}
+  .evento-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .evento-card .e-ico{width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.06);border:2px dashed rgba(255,209,102,.45);display:grid;place-items:center;margin-bottom:.6rem}
+  .evento-card .e-ico i{font-size:1.5rem;color:var(--oro)}
+  .evento-card h3{font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+  .evento-card p{font-size:.9rem;color:var(--muted);flex:1}
+  .evento-card .fecha{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rosa)}
 
   /* pasos */
   .pasos{background:var(--bg-2);border-block:1px solid var(--line)}
@@ -300,18 +281,19 @@
   .contact-list{list-style:none;display:grid;gap:1.1rem;margin-bottom:1.8rem}
   .contact-list li{display:flex;gap:1rem;align-items:flex-start}
   .c-ico{width:46px;height:46px;border-radius:14px;flex:none;background:rgba(255,255,255,.06);border:2px dashed rgba(255,209,102,.4);display:grid;place-items:center}
-  .c-ico svg{width:22px;height:22px;stroke:var(--oro);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .c-ico i{color:var(--oro);font-size:1.1rem}
   .contact-list b{display:block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rosa);margin-bottom:.15rem}
   .contact-list p,.contact-list a{font-size:1rem;color:var(--txt);text-decoration:none;font-weight:500}
   .contact-list a:hover{color:var(--naranja)}
   .contact-list .sub{font-size:.82rem;color:var(--muted);font-weight:400}
   .socials{display:flex;gap:.8rem;flex-wrap:wrap}
-  .social{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;border:1.5px solid var(--line);background:rgba(255,255,255,.06);transition:all .25s ease}
+  .social{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;border:1.5px solid var(--line);background:rgba(255,255,255,.06);transition:all .25s ease;text-decoration:none}
   .social:hover{border-color:var(--rosa);transform:translateY(-4px) scale(1.06)}
+  .social i{font-size:1.25rem;color:var(--rosa)}
   .hours-card{background:linear-gradient(165deg,#8e2d8a,#e8323f 55%,#b01020);border-radius:26px;padding:2.2rem 2.1rem;box-shadow:var(--shadow);position:relative;overflow:hidden}
   .hours-card::after{content:"";position:absolute;inset:10px;border:2px dashed rgba(255,255,255,.35);border-radius:18px;pointer-events:none}
   .hours-card h3{font-family:var(--font-display);font-weight:800;font-size:1.45rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:.7rem}
-  .hours-card h3 svg{width:24px;height:24px;stroke:var(--oro);fill:none;stroke-width:2;stroke-linecap:round}
+  .hours-card h3 i{color:var(--oro)}
   .hours-row{display:flex;justify-content:space-between;gap:1rem;padding:.68rem 0;border-bottom:1px dashed rgba(255,255,255,.28);font-size:.95rem}
   .hours-row:last-of-type{border-bottom:0}
   .hours-row span{color:rgba(255,255,255,.85);text-align:right}
@@ -328,9 +310,9 @@
   .foot-note{font-size:.78rem;color:rgba(255,247,239,.45);border-top:1px dashed rgba(255,247,239,.18);padding-top:1.4rem;line-height:1.7}
 
   /* whatsapp flotante */
-  .wa-float{position:fixed;right:22px;bottom:22px;z-index:80;width:60px;height:60px;border-radius:50%;background:var(--teal);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(42,179,176,.7);transition:transform .2s ease}
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:80;width:60px;height:60px;border-radius:50%;background:var(--teal);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(42,179,176,.7);transition:transform .2s ease;text-decoration:none}
   .wa-float:hover{transform:scale(1.1)}
-  .wa-float svg{width:31px;height:31px;fill:#fff}
+  .wa-float i{font-size:1.9rem;color:#fff}
   .wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--teal);animation:pulse 2.2s ease-out infinite}
   @keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
 
@@ -345,7 +327,6 @@
     .evento-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}
     .premios-grid{grid-template-columns:1fr;max-width:420px;gap:2.6rem}
     .pasos-grid{grid-template-columns:repeat(2,1fr);row-gap:2.4rem}
-    .paso:nth-child(2)::after{display:none}
     .features-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
     .feature:nth-child(3){border-left:0}
     .hero-grid{grid-template-columns:1fr;gap:3.4rem;padding:3.4rem 0 4.4rem}
@@ -365,7 +346,6 @@
     .nav-cta .btn{padding:.7rem .95rem}
     .taller-grid,.evento-grid,.gal-grid{grid-template-columns:1fr}
     .pasos-grid{grid-template-columns:1fr}
-    .paso::after{display:none!important}
     .foot-grid{grid-template-columns:1fr}
     .float-note{position:static;transform:none;margin:1.3rem auto 0;max-width:none}
     section{padding:3.6rem 0}
@@ -393,11 +373,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="#inicio" aria-label="Tusuy Perú — inicio">
-      <svg class="brand-mark" viewBox="0 0 64 72" aria-hidden="true">
-        <path d="M32 4 L56 13 V36 C56 52 45 63 32 69 C19 63 8 52 8 36 V13 Z" fill="#e8323f" stroke="#fff" stroke-width="3"/>
-        <path d="M22 26 q10 -9 20 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-        <text x="32" y="56" font-family="Baloo 2, Arial" font-size="26" font-weight="800" fill="#fff" text-anchor="middle">TP</text>
-      </svg>
+      <img class="brand-mark" src="img/logo-academia.jpg" alt="Logotipo de Academia Tusuy Perú" width="48" height="48">
       <span class="brand-name">TUSUY PERÚ<small>Danza y Música</small></span>
     </a>
     <nav aria-label="Navegación principal">
@@ -412,13 +388,8 @@
       </ul>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary shine" href="https://wa.me/51979756139" target="_blank" rel="noopener">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.4z"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+      <a class="btn btn-primary shine" href="https://wa.me/51979756139" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
 </header>
@@ -437,9 +408,9 @@
         <a class="btn btn-ghost" href="#vestuarios">Alquila tu vestuario</a>
       </div>
       <div class="hero-badges pop p4">
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 22l5-3 5 3-1.5-9.5"/></svg>Campeones nacionales 2026</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-2zM19 17H6"/></svg>Más de 20 talleres</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.8-7-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 16.2 12 21 12 21z"/></svg>Desde 2009</span>
+        <span class="chip"><i class="fa-solid fa-medal" aria-hidden="true"></i>Campeones nacionales 2026</span>
+        <span class="chip"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Más de 20 talleres</span>
+        <span class="chip"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Desde 2009</span>
       </div>
     </div>
 
@@ -463,22 +434,10 @@
 <!-- ====== FEATURES ====== -->
 <div class="features">
   <div class="wrap features-grid">
-    <div class="feature">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      <div><b>Desde 2009</b><span>Más de 16 años de trayectoria</span></div>
-    </div>
-    <div class="feature">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 9l10 6 10-6-10-6zM2 15l10 6 10-6"/></svg>
-      <div><b>Staff profesional</b><span>Egresados de escuelas de arte del Perú</span></div>
-    </div>
-    <div class="feature">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-      <div><b>Más de 20 talleres</b><span>Niños, jóvenes y adultos</span></div>
-    </div>
-    <div class="feature">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l16-6v14L3 13zM3 11v2M7 14v6M17 14v6"/></svg>
-      <div><b>Amplios ambientes</b><span>Atención y enseñanza de calidad</span></div>
-    </div>
+    <div class="feature"><i class="fa-solid fa-clock" aria-hidden="true"></i><div><b>Desde 2009</b><span>Más de 16 años de trayectoria</span></div></div>
+    <div class="feature"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><div><b>Staff profesional</b><span>Egresados de escuelas de arte del Perú</span></div></div>
+    <div class="feature"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><div><b>Más de 20 talleres</b><span>Niños, jóvenes y adultos</span></div></div>
+    <div class="feature"><i class="fa-solid fa-door-open" aria-hidden="true"></i><div><b>Amplios ambientes</b><span>Atención y enseñanza de calidad</span></div></div>
   </div>
 </div>
 
@@ -491,9 +450,9 @@
       <p><strong>Tusuy Perú</strong> es una academia de <strong>marinera norteña, danza y música</strong> de Lima, fundada en 2009. Nuestro staff está formado por profesionales egresados de las mejores escuelas de arte del Perú.</p>
       <p>Ofrecemos buena atención, amplios ambientes y una <strong>enseñanza de calidad</strong> para niños, jóvenes y adultos, con niveles básico, intermedio y avanzado, y preparación para concursos oficiales de marinera.</p>
       <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Niveles básico, intermedio y avanzado</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Clases modelo gratuitas al abrir nuevos grupos</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Alumnos campeones en concursos nacionales de marinera</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Niveles básico, intermedio y avanzado</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Clases modelo gratuitas al abrir nuevos grupos</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Alumnos campeones en concursos nacionales de marinera</li>
       </ul>
     </div>
     <div class="stat-grid reveal d1">
@@ -516,54 +475,42 @@
     <div class="taller-grid">
       <article class="taller-card featured reveal">
         <span class="badge-feat">Taller insignia</span>
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><path d="M26 8a15 15 0 0 1 15 15c0 9-8 12-8 12H19s-8-3-8-12A15 15 0 0 1 26 8z"/><path d="M19 35h14M22 41h8"/><path d="M12 14 4 8M40 14l8-6M26 6V1"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-hat-cowboy"></i></div>
         <h3>Marinera Norteña</h3>
         <p>El baile nacional: técnica, estilo y compás desde pre-infantil hasta adultos. Preparación para concursos oficiales.</p>
         <div class="taller-tags"><span>Básico</span><span>Intermedio</span><span>Avanzado</span><span>Competencia</span></div>
       </article>
 
       <article class="taller-card reveal d1">
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><path d="M8 46c6-16 10-30 18-30s12 14 18 30"/><path d="M16 30c6 4 14 4 20 0" opacity=".6"/><path d="M26 16V6M22 8l4-4 4 4"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
         <h3>Danzas del Perú</h3>
         <p>Danzas folclóricas de costa, sierra y selva: valicha, alcatraz, festejo, huaylas y más.</p>
         <div class="taller-tags"><span>Costa</span><span>Sierra</span><span>Selva</span></div>
       </article>
 
       <article class="taller-card reveal d2">
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><circle cx="26" cy="12" r="6"/><path d="M26 18v14M12 50c0-9 6-14 14-14s14 5 14 14"/><path d="M14 30l-6 8M38 30l6 8"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-music"></i></div>
         <h3>Danza moderna</h3>
         <p>Expresión y movimiento al ritmo de hoy, con presentaciones de fin de ciclo en escenario.</p>
         <div class="taller-tags"><span>Presentaciones</span><span>Expresión</span></div>
       </article>
 
       <article class="taller-card reveal">
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><path d="M26 6v10M22 6h8"/><path d="M26 16c-7 0-12 5-12 12 8 6 16 6 24 0 0-7-5-12-12-12z"/><path d="M14 28 8 46M38 28l6 18M26 34v14" opacity=".7"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-drum"></i></div>
         <h3>Música y expresión</h3>
         <p>Ritmo, oído y corporalidad: complemento perfecto para la formación integral del bailarín.</p>
         <div class="taller-tags"><span>Ritmo</span><span>Corporal</span></div>
       </article>
 
       <article class="taller-card reveal d1">
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><circle cx="26" cy="24" r="11"/><path d="M26 13V7M18 7h16"/><path d="M20 32c-2 5-2 9 0 14M32 32c2 5 2 9 0 14" opacity=".7"/><path d="M26 35v11"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-sun"></i></div>
         <h3>Talleres de verano</h3>
         <p>Ciclos especiales de verano para niños y jóvenes, con sedes adicionales en Lima.</p>
         <div class="taller-tags"><span>Verano</span><span>Niños y jóvenes</span></div>
       </article>
 
       <article class="taller-card reveal d2">
-        <div class="taller-ico" aria-hidden="true">
-          <svg viewBox="0 0 52 52"><rect x="10" y="8" width="32" height="24" rx="4"/><path d="M10 16h32M18 32l-4 12M34 32l4 12M26 32v12"/><path d="M20 14l3 5-3 5M32 14l-3 5 3 5" opacity=".6"/></svg>
-        </div>
+        <div class="taller-ico" aria-hidden="true"><i class="fa-solid fa-video"></i></div>
         <h3>Clases online gratis</h3>
         <p>Practica marinera desde casa con nuestras clases modelo gratuitas en YouTube.</p>
         <div class="taller-tags"><span>YouTube</span><span>Gratis</span></div>
@@ -584,7 +531,7 @@
     <div class="premios-grid">
       <div class="premio">
         <div class="pennant pen-1 reveal">
-          <svg class="escudo" viewBox="0 0 64 72" aria-hidden="true"><path d="M32 4 L56 13 V36 C56 52 45 63 32 69 C19 63 8 52 8 36 V13 Z" fill="#fff"/><path d="M22 26 q10 -9 20 0" fill="none" stroke="#e8323f" stroke-width="3" stroke-linecap="round"/><text x="32" y="56" font-family="Baloo 2, Arial" font-size="26" font-weight="800" fill="#e8323f" text-anchor="middle">TP</text></svg>
+          <img class="escudo" src="img/logo-vestuarios.png" alt="" width="72" height="72">
           <b>GRAN<br>BARRA</b>
         </div>
         <div class="puesto reveal d1">1° PUESTO</div>
@@ -592,7 +539,7 @@
       </div>
       <div class="premio">
         <div class="pennant pen-2 reveal d1">
-          <svg class="escudo" viewBox="0 0 64 72" aria-hidden="true"><path d="M32 4 L56 13 V36 C56 52 45 63 32 69 C19 63 8 52 8 36 V13 Z" fill="#fff"/><path d="M22 26 q10 -9 20 0" fill="none" stroke="#e91e8c" stroke-width="3" stroke-linecap="round"/><text x="32" y="56" font-family="Baloo 2, Arial" font-size="26" font-weight="800" fill="#e91e8c" text-anchor="middle">TP</text></svg>
+          <img class="escudo" src="img/logo-vestuarios.png" alt="" width="72" height="72">
           <b>GRAN<br>BARRA</b>
         </div>
         <div class="puesto reveal d2">2° PUESTO</div>
@@ -600,7 +547,7 @@
       </div>
       <div class="premio">
         <div class="pennant pen-3 reveal d2">
-          <svg class="escudo" viewBox="0 0 64 72" aria-hidden="true"><path d="M32 4 L56 13 V36 C56 52 45 63 32 69 C19 63 8 52 8 36 V13 Z" fill="#fff"/><path d="M22 26 q10 -9 20 0" fill="none" stroke="#2ab3b0" stroke-width="3" stroke-linecap="round"/><text x="32" y="56" font-family="Baloo 2, Arial" font-size="26" font-weight="800" fill="#2ab3b0" text-anchor="middle">TP</text></svg>
+          <img class="escudo" src="img/logo-vestuarios.png" alt="" width="72" height="72">
           <b>GRAN<br>BARRA</b>
         </div>
         <div class="puesto reveal d3">3° PUESTO</div>
@@ -621,19 +568,19 @@
         <p style="color:var(--muted)">Tienda de vestuarios típicos de Tusuy Perú: todo para tu presentación, concurso, desfile o fiesta patria.</p>
         <ul class="vest-list">
           <li>
-            <span class="v-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 8l-5 3 2 3 3-1M16 8l5 3-2 3-3-1M9 8h6l1 13H8z"/></svg></span>
+            <span class="v-ico"><i class="fa-solid fa-shirt" aria-hidden="true"></i></span>
             <div><b>Alquiler de vestimentas</b><span>Trajes de danzas folclóricas para toda ocasión, en todas las tallas.</span></div>
           </li>
           <li>
-            <span class="v-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1.5 13h-13zM8 7a4 4 0 0 1 8 0"/></svg></span>
+            <span class="v-ico"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></span>
             <div><b>Venta de trajes típicos</b><span>Para escuela, academia, elencos y fechas patrias.</span></div>
           </li>
           <li>
-            <span class="v-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l12 4-1 3.5L5 6.5zM9 12l2 3M15 12l-2 3M11 15h2v6h-2z"/></svg></span>
+            <span class="v-ico"><i class="fa-solid fa-scissors" aria-hidden="true"></i></span>
             <div><b>Confección a medida</b><span>Elaboramos el traje de tu danza con la calidad del original.</span></div>
           </li>
         </ul>
-        <a class="btn btn-light" href="https://wa.me/51979756139?text=Hola%2C%20quiero%20cotizar%20el%20alquiler%20de%20un%20vestuario%20t%C3%ADpico" target="_blank" rel="noopener">Cotiza tu vestuario</a>
+        <a class="btn btn-light" href="https://wa.me/51979756139?text=Hola%2C%20quiero%20cotizar%20el%20alquiler%20de%20un%20vestuario%20t%C3%ADpico" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Cotiza tu vestuario</a>
       </div>
       <figure class="brand-photo glow-pulse reveal d1" style="border-radius:26px">
         <img src="img/logo-vestuarios.png" alt="Logotipo de Tusuy Perú Vestuarios y Disfraces con máscara de diablada" width="536" height="536" style="border-radius:26px">
@@ -673,19 +620,19 @@
     </div>
     <div class="evento-grid">
       <div class="evento-card reveal">
-        <span class="e-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 5H4v2a4 4 0 0 0 3 3.9M17 5h3v2a4 4 0 0 1-3 3.9"/></svg></span>
+        <span class="e-ico"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
         <span class="fecha">13 setiembre 2026 · Coliseo General Prado</span>
         <h3>VII Concurso Nacional de Marinera Norteña</h3>
         <p>Nuestro concurso anual reúne a las mejores parejas del país. Ya preparamos la VIII edición en 2027: cuadrantes, reinas y mucha tradición.</p>
       </div>
       <div class="evento-card reveal d1">
-        <span class="e-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a6 6 0 0 0 6-6c0-2-1-4-2-5l-1 2-3-4-3 4-1-2c-1 1-2 3-2 5a6 6 0 0 0 6 6zM12 15v4M8 21h8"/></svg></span>
+        <span class="e-ico"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
         <span class="fecha">Temporada 2026</span>
         <h3>Campeones nacionales 2026</h3>
         <p>Alumnos de Tusuy Perú campeones en las categorías infantil, junior, juvenil, adulto y master del Nacional 2026 y del Nacional Abierto.</p>
       </div>
       <div class="evento-card reveal d2">
-        <span class="e-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 5.3 5.5.7-4 3.9 1 5.6-5-2.8-5 2.8 1-5.6-4-3.9 5.5-.7z"/></svg></span>
+        <span class="e-ico"><i class="fa-solid fa-crown" aria-hidden="true"></i></span>
         <span class="fecha">Setiembre 2026</span>
         <h3>Gran Cena de Coronación</h3>
         <p>Celebración anual donde coronamos a nuestros campeones y reinas, junto a familias y amigos de la academia.</p>
@@ -722,44 +669,38 @@
       <div class="reveal">
         <ul class="contact-list">
           <li>
-            <span class="c-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span class="c-ico"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
             <div><b>Dirección</b><p>Av. Gran Chimú N° 541 — Zárate <span class="sub">San Juan de Lurigancho, Lima, Perú</span></p></div>
           </li>
           <li>
-            <span class="c-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span>
+            <span class="c-ico"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
             <div><b>WhatsApp / RPC</b><p><a href="https://wa.me/51979756139" target="_blank" rel="noopener">979 756 139</a> · <a href="tel:+51997307728">997 307 728</a></p></div>
           </li>
           <li>
-            <span class="c-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span class="c-ico"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
             <div><b>Teléfono fijo</b><p><a href="tel:+5113326695">(01) 332-6695</a></p></div>
           </li>
           <li>
-            <span class="c-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="c-ico"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
             <div><b>Correo</b><p><a href="mailto:peruandino@gmail.com">peruandino@gmail.com</a></p></div>
           </li>
           <li>
-            <span class="c-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5h5v5M20 5l-8 8M9 19H4v-5M4 19l8-8"/></svg></span>
+            <span class="c-ico"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></span>
             <div><b>Redes sociales</b><p><a href="https://www.facebook.com/AcademiaTusuyPeru/" target="_blank" rel="noopener">Facebook · Academia</a> · <a href="https://www.facebook.com/VestuariosYDisfracesPeru/" target="_blank" rel="noopener">Facebook · Vestuarios</a> · <a href="https://www.instagram.com/tusuyp/" target="_blank" rel="noopener">Instagram @tusuyp</a></p></div>
           </li>
         </ul>
         <div class="socials">
-          <a class="social" href="https://www.facebook.com/AcademiaTusuyPeru/" target="_blank" rel="noopener" aria-label="Facebook de la Academia Tusuy Perú">
-            <svg viewBox="0 0 24 24" fill="#ff4fa0" aria-hidden="true"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>
-          </a>
-          <a class="social" href="https://www.instagram.com/tusuyp/" target="_blank" rel="noopener" aria-label="Instagram de Tusuy Perú">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#ff4fa0" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#ff4fa0" stroke="none"/></svg>
-          </a>
-          <a class="social" href="https://www.youtube.com/results?search_query=Academia+Tusuy+Per%C3%BA" target="_blank" rel="noopener" aria-label="Videos de la Academia Tusuy Perú en YouTube">
-            <svg viewBox="0 0 24 24" fill="#ff4fa0" aria-hidden="true"><path d="M22 12s0-3.8-.5-5.4c-.3-1-1.1-1.7-2.1-2C17.8 4 12 4 12 4s-5.8 0-7.4.6c-1 .3-1.8 1-2.1 2C2 8.2 2 12 2 12s0 3.8.5 5.4c.3 1 1.1 1.7 2.1 2C6.2 20 12 20 12 20s5.8 0 7.4-.6c-1 .3 1.8-1 2.1-2C22 15.8 22 12 22 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
-          </a>
+          <a class="social" href="https://www.facebook.com/AcademiaTusuyPeru/" target="_blank" rel="noopener" aria-label="Facebook de la Academia Tusuy Perú"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a class="social" href="https://www.instagram.com/tusuyp/" target="_blank" rel="noopener" aria-label="Instagram de Tusuy Perú"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a class="social" href="https://www.youtube.com/results?search_query=Academia+Tusuy+Per%C3%BA" target="_blank" rel="noopener" aria-label="Videos de la Academia Tusuy Perú en YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="hours-card reveal d1">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Horario de atención</h3>
+        <h3><i class="fa-solid fa-clock" aria-hidden="true"></i>Horario de atención</h3>
         <div class="hours-row"><b>Lunes a viernes</b><span>9:00 – 21:00 h</span></div>
         <div class="hours-row"><b>Sábados</b><span>9:00 – 21:00 h</span></div>
         <div class="hours-row"><b>Domingos</b><span>Cerrado</span></div>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Av.+Gran+Chim%C3%BA+541%2C+Z%C3%A1rate%2C+San+Juan+de+Lurigancho%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Av.+Gran+Chim%C3%BA+541%2C+Z%C3%A1rate%2C+San+Juan+de+Lurigancho%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>Cómo llegar</a>
       </div>
     </div>
   </div>
@@ -772,11 +713,7 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="#inicio" style="margin-bottom:1rem">
-          <svg class="brand-mark" viewBox="0 0 64 72" aria-hidden="true">
-            <path d="M32 4 L56 13 V36 C56 52 45 63 32 69 C19 63 8 52 8 36 V13 Z" fill="#e8323f" stroke="#fff" stroke-width="3"/>
-            <path d="M22 26 q10 -9 20 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-            <text x="32" y="56" font-family="Baloo 2, Arial" font-size="26" font-weight="800" fill="#fff" text-anchor="middle">TP</text>
-          </svg>
+          <img class="brand-mark" src="img/logo-academia.jpg" alt="Logotipo de Academia Tusuy Perú" width="48" height="48">
           <span class="brand-name">TUSUY PERÚ<small>Danza y Música</small></span>
         </a>
         <p style="font-size:.92rem;margin-top:1rem;max-width:27rem">Academia de marinera norteña, danza y música. Tienda de vestuarios típicos: alquiler, venta y confección. Zárate, San Juan de Lurigancho, Lima.</p>
@@ -809,9 +746,7 @@
 </footer>
 
 <!-- whatsapp flotante -->
-<a class="wa-float" href="https://wa.me/51979756139" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Tusuy Perú">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.4z"/></svg>
-</a>
+<a class="wa-float" href="https://wa.me/51979756139" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp con Tusuy Perú"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
 <script>
   // menú móvil
@@ -835,7 +770,7 @@
   // red de seguridad: si el observador no dispara (p. ej. vistas embebidas), revelar todo
   setTimeout(() => document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible')), 2200);
 
-  // galería: ocultar la nota si al menos una foto cargó / ocultar sección vacía
+  // galería: si ninguna foto cargó, mostrar mensaje y ocultar la nota
   window.addEventListener('load', () => {
     const cards = document.querySelectorAll('.gal-card');
     const any = [...cards].some(c => {
