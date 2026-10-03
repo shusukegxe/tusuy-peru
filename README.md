@@ -2,7 +2,7 @@
 
 Página web oficial de **Tusuy Perú — Danza y Música**: academia de marinera norteña, danza y música, y tienda de vestuarios típicos (alquiler, venta y confección) en Zárate, San Juan de Lurigancho, Lima, Perú.
 
-🫱 **Sitio en vivo:** https://estebangrp_.github.io/tusuy-peru/ (GitHub Pages)
+🫱 **Sitio en vivo:** https://shusukegxe.github.io/tusuy-peru/ (GitHub Pages)
 
 ## Contenido
 
